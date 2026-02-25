@@ -15,6 +15,7 @@ Training Setup :
 - Max sequence length: 1024 tokens
 - Masked loss: train only on assistant outputs
 - FP16 mixed precision
+- LoRA rank (r=8)
 - Single epoch fine-tuning
 
 Evaluation :
@@ -26,7 +27,8 @@ Evaluation :
     - **Functional API score** (presence of valid API call patterns)
 
 ### Results 
-_(on 500 sample evaluation)_ LoRA fine-tuning significantly improved structural compliance and semantic similarity without increasing output length.
+_(on 500 sample evaluation)_ Significantly improved structural compliance and semantic similarity without increasing output length _(~40% improvement in Jaccard
+~45% in ROUGE-L)_.
 
 | Metric | Baseline | LoRA |
 |---------|----------|------|
