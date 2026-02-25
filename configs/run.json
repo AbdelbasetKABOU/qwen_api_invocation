@@ -1,0 +1,26 @@
+{
+  "model_name": "Qwen/Qwen2.5-7B-Instruct",
+  "raw_files": [
+    "./data/raw/huggingface_train.json",
+    "./data/raw/tensorflow_train.json",
+    "./data/raw/torchhub_train.json"
+  ],
+  "eval_files": [
+    "./data/eval/huggingface_eval.json",
+    "./data/eval/tensorflow_eval.json",
+    "./data/eval/torchhub_eval.json"
+  ],  
+  "tokenized_dir" : "./data/apibench_tokenized_ds",
+  "output_dir"    : "./outputs/qwen2p5_apibench_lora",
+  "max_length"    : 1024,
+
+  "lora_r"        : 8,
+  "lora_alpha"    : 16,
+  "lora_dropout"  : 0.05,
+  "target_modules": ["q_proj","k_proj","v_proj","o_proj"],
+
+  "per_device_train_batch_size": 1,
+  "gradient_accumulation_steps": 16,
+  "learning_rate": 2e-5,
+  "num_train_epochs": 1
+}
